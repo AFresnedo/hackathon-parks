@@ -2,9 +2,14 @@ extends layout
 
 block content
   .inner
+    .text-container.text-center
+      h2.h5.pt-5 You are at
+      h3.display-5.pb-3 Discovery Park, Seattle
+  
+  .text-center
+    h2 All Pending Reports
+    h3 Up vote existing report or create a new one
     a.btn.btn-danger(href="/issues/new") Report a problem
-    p Make sure to reach out to your local representative to make sure this problem gets solved!
-    a.btn.btn-secondary(href="/local-reps") Reach Out
 
   .dropdown.mt-4
     button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.btn-block(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Problem Category
@@ -20,5 +25,10 @@ block content
         h3= issue.park
         p= issue.txt
       .votes
-        a.btn.btn-primary(href=`/upvote/${issue.id}`) Upvote
+        a.btn.btn-warning(href=`/upvote/${issue.id}`) Upvote
         p= issue.vote
+
+  hr        
+
+  p Make sure to reach out to your local representative to make sure this problem gets solved!
+  a.btn.btn-secondary(href="/local-reps") Reach Out

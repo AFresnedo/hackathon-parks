@@ -5,20 +5,20 @@ html
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous")
     link(rel='stylesheet', href='/styles/style.css')
     meta(name="viewport" content="width=device-width, initial-scale=1")
+  
   body
     block header
       nav.navbar.navbar-expand-lg.navbar-light.bg-light
-        a.navbar-brand.mr-auto(href="/") Home
+        a.navbar-brand.mr-auto(href="/") 
         if user
-          a.btn.btn-outline-success.my-2.my-sm-0(href="/logout") Logout
+          a.btn.btn-warning.my-2.my-sm-0(href="/logout") Logout
         else
-          a.btn.btn-outline-success.my-2.my-sm-0.mr-2(href="/register") Register
-          a.btn.btn-outline-success.my-2.my-sm-0(href="/login") Login
+          a.btn.btn-warning.my-2.my-sm-0.mr-2(href="/register") Register
+          a.btn.btn-warning.my-2.my-sm-0(href="/login") Login
 
     block messages
       if locals.flashes
-        .inner
-          - const categories = Object.keys(locals.flashes)
+        - const categories = Object.keys(locals.flashes)
           each category in categories
             each message in flashes[category]
               .flash(class=`flash--${category}`)
